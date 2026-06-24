@@ -109,71 +109,35 @@ window.addEventListener("scroll", () => {
 
 //  HAMBURGER MENU 
 
-// const hamburger = document.querySelector(".hamburger");
-// const navMenu = document.querySelector(".nav-links");
-
-// if (hamburger && navMenu) {
-
-//     hamburger.addEventListener("click", function(e) {
-//         e.stopPropagation(); 
-//         navMenu.classList.toggle("show");
-//         hamburger.classList.toggle("active");
-//     });
-
-
-//     navLinks.forEach(link => {
-//         link.addEventListener("click", function() {
-//             navMenu.classList.remove("show");
-//             hamburger.classList.remove("active");
-//         });
-//     });
-
-
-//     document.addEventListener("click", function(e) {
-//         if (navMenu.classList.contains("show") && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-//             navMenu.classList.remove("show");
-//             hamburger.classList.remove("active");
-//         }
-//     });
-// }
-
-// HAMBURGER MENU
-
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-links");
 
 if (hamburger && navMenu) {
 
-    function toggleMenu(e) {
-        if (e) e.stopPropagation();
-
-        alert("Menu Clicked"); // Test ke liye
+    hamburger.addEventListener("click", function(e) {
+        e.stopPropagation(); 
         navMenu.classList.toggle("show");
         hamburger.classList.toggle("active");
-    }
+    });
 
-    // Click + Touch dono support
-    hamburger.addEventListener("click", toggleMenu);
-    hamburger.addEventListener("touchstart", toggleMenu);
 
     navLinks.forEach(link => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", function() {
             navMenu.classList.remove("show");
             hamburger.classList.remove("active");
         });
     });
 
-    document.addEventListener("click", (e) => {
-        if (
-            navMenu.classList.contains("show") &&
-            !navMenu.contains(e.target) &&
-            !hamburger.contains(e.target)
-        ) {
+
+    document.addEventListener("click", function(e) {
+        if (navMenu.classList.contains("show") && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
             navMenu.classList.remove("show");
             hamburger.classList.remove("active");
         }
     });
 }
+
+
 // THEME TOGGLE 
 
 const themeToggle = document.querySelector(".theme-toggle");
