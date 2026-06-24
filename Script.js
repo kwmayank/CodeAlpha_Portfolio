@@ -42,6 +42,7 @@ function typeEffect() {
 
 typeEffect();
 
+
 const sections = document.querySelectorAll("section");
 
 sections.forEach(section => {
@@ -64,6 +65,8 @@ function revealSections() {
 window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
 
+
+// Active Navbar 
 
 const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -91,6 +94,7 @@ window.addEventListener("scroll", () => {
 });
 
 
+// Sticky Navbar Shadow
 
 const navbar = document.querySelector(".navbar");
 
@@ -103,31 +107,43 @@ window.addEventListener("scroll", () => {
             : "none";
 });
 
-
+//  HAMBURGER MENU 
 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-links");
 
 if (hamburger && navMenu) {
-    hamburger.addEventListener("click", () => {
+
+    hamburger.addEventListener("click", function(e) {
+        e.stopPropagation(); 
         navMenu.classList.toggle("show");
         hamburger.classList.toggle("active");
     });
 
+
     navLinks.forEach(link => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", function() {
             navMenu.classList.remove("show");
             hamburger.classList.remove("active");
         });
     });
+
+
+    document.addEventListener("click", function(e) {
+        if (navMenu.classList.contains("show") && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            navMenu.classList.remove("show");
+            hamburger.classList.remove("active");
+        }
+    });
 }
 
-
+// THEME TOGGLE 
 
 const themeToggle = document.querySelector(".theme-toggle");
 
 if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
+    themeToggle.addEventListener("click", function(e) {
+        e.stopPropagation(); // <--- यह नई लाइन है
         document.body.classList.toggle("dark");
 
         const icon = themeToggle.querySelector("i");

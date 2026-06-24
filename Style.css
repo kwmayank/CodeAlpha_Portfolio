@@ -1,8 +1,6 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -257,7 +255,6 @@ body {
     overflow: hidden;
 }
 
-
 .about-image-wrapper {
     position: relative;
     flex-shrink: 0;
@@ -273,7 +270,6 @@ body {
     position: relative;
     z-index: 2;
 }
-
 
 .about-ring {
     position: absolute;
@@ -698,7 +694,7 @@ body {
     }
 
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
     
@@ -842,23 +838,16 @@ body.dark .navbar {
     box-shadow: 0 2px 15px rgba(0, 0, 0, .5);
 }
 
-body.dark .nav-links a {
-    color: #fff;
-}
 
-body.dark .nav-links a:hover {
-    color: #2575fc;
-}
 
 /*  HAMBURGER  */
 body.dark .hamburger span {
     background: #ffffff;
 }
 
-
 body.dark .nav-links {
-    background: #1e293b;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    background: #1e293b !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
 }
 
 body.dark .nav-links a {
@@ -869,7 +858,7 @@ body.dark .nav-links a:hover {
     color: #2575fc;
 }
 
-/* ===== THEME TOGGLE - DARK MODE ===== */
+/* THEME TOGGLE - DARK MODE */
 body.dark .theme-toggle {
     color: #ffffff;
 }
@@ -914,7 +903,7 @@ body.dark .project-links .btn-outline:hover {
     color: #fff;
 }
 
-/* Headings Dark */
+/* Headings  */
 body.dark .about-section h2,
 body.dark .contact-section h2,
 body.dark .services-section h2,
@@ -923,7 +912,7 @@ body.dark .skills-section h2 {
     color: #fff;
 }
 
-/* About Extra Dark */
+/* About  */
 body.dark .about-subtitle {
     color: #6a11cb;
 }
@@ -949,7 +938,7 @@ body.dark .about-ring {
     opacity: 0.5;
 }
 
-/* Skills & Tools Dark */
+/* Skills & Tools */
 body.dark .skill-group h3,
 body.dark .tool-group h3 {
     color: #fff;
@@ -970,7 +959,7 @@ body.dark .tool-item i {
     color: #6a11cb;
 }
 
-/* Contact Form Dark */
+/* Contact  */
 body.dark .contact-section input,
 body.dark .contact-section textarea {
     background: #111827;
@@ -989,7 +978,7 @@ body.dark .contact-section textarea:focus {
     box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.3);
 }
 
-/* Footer Dark */
+/* Footer */
 body.dark .footer-section {
     background: #020617;
 }
