@@ -109,41 +109,78 @@ window.addEventListener("scroll", () => {
 
 //  HAMBURGER MENU 
 
+// const hamburger = document.querySelector(".hamburger");
+// const navMenu = document.querySelector(".nav-links");
+
+// if (hamburger && navMenu) {
+
+//     hamburger.addEventListener("click", function(e) {
+//         e.stopPropagation(); 
+//         navMenu.classList.toggle("show");
+//         hamburger.classList.toggle("active");
+//     });
+
+
+//     navLinks.forEach(link => {
+//         link.addEventListener("click", function() {
+//             navMenu.classList.remove("show");
+//             hamburger.classList.remove("active");
+//         });
+//     });
+
+
+//     document.addEventListener("click", function(e) {
+//         if (navMenu.classList.contains("show") && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+//             navMenu.classList.remove("show");
+//             hamburger.classList.remove("active");
+//         }
+//     });
+// }
+
+// HAMBURGER MENU
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-links");
 
 if (hamburger && navMenu) {
 
-    hamburger.addEventListener("click", function(e) {
-        e.stopPropagation(); 
+    function toggleMenu(e) {
+        if (e) e.stopPropagation();
+
+        alert("Menu Clicked"); // Test ke liye
         navMenu.classList.toggle("show");
         hamburger.classList.toggle("active");
-    });
+    }
 
+    // Click + Touch dono support
+    hamburger.addEventListener("click", toggleMenu);
+    hamburger.addEventListener("touchstart", toggleMenu);
 
     navLinks.forEach(link => {
-        link.addEventListener("click", function() {
+        link.addEventListener("click", () => {
             navMenu.classList.remove("show");
             hamburger.classList.remove("active");
         });
     });
 
-
-    document.addEventListener("click", function(e) {
-        if (navMenu.classList.contains("show") && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    document.addEventListener("click", (e) => {
+        if (
+            navMenu.classList.contains("show") &&
+            !navMenu.contains(e.target) &&
+            !hamburger.contains(e.target)
+        ) {
             navMenu.classList.remove("show");
             hamburger.classList.remove("active");
         }
     });
 }
-
 // THEME TOGGLE 
 
 const themeToggle = document.querySelector(".theme-toggle");
 
 if (themeToggle) {
     themeToggle.addEventListener("click", function(e) {
-        e.stopPropagation(); // <--- यह नई लाइन है
+        e.stopPropagation(); 
         document.body.classList.toggle("dark");
 
         const icon = themeToggle.querySelector("i");
